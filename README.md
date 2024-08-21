@@ -41,7 +41,7 @@ Co nieco ze specyfikacji mojego terminala:
 |  Dysk Systemowy  | 128GB NVMe  |
 |   Dysk na dane |  500GB talerzowy WD Black |
 
-![Przykładowe zdjęcie](/WłasnaDokumentacja/HomeLab/LepszaDokumentacja/images/T630.jpg)
+![Przykładowe zdjęcie](images/T630.jpg)
 
 
 Ten terminal oferuje naprawdę wiele możliwości, zwłaszcza gdy weźmiemy pod uwagę jego atrakcyjną cenę. Za około 160 zł otrzymujemy komputer, który dzięki dużej ilości pamięci RAM i wielordzeniowemu procesorowi pozwala na realizację szerokiego zakresu zadań.
@@ -52,7 +52,7 @@ W moim przypadku terminal zużywa około 11 W w spoczynku i do 25 W przy maksyma
 
 
 ### 1.2. Antena Zigbee
-![antena Zigbee](/WłasnaDokumentacja/HomeLab/LepszaDokumentacja/images/zigbee-dongle.jpg)
+![antena Zigbee](images/zigbee-dongle.jpg)
 
 Urządzenie, które będzie naszym masterem do komunikacji z urządzeniami po protokole zigbee. Będzie ono mi potrzebne do stworzenia automatyzacji w domu, o której będzie w dalszej części. Na razie antena jest wpięta pod urządzenie i tyle.
 
@@ -64,7 +64,7 @@ W tej częsci zajmę się opisem oprogramowania, które wdrożyłem na swoim spr
 Głównym systemem zainstalowanym na tym sprzęcie jest OpenMediaVault, oprogramowanie typu open-source, które umożliwia łatwe zarządzanie udziałami sieciowymi i dyskami, które w przyszłości mogą zostać zintegrowane w macierz RAID.
 
 Jednym z największych atutów OpenMediaVault jest jego prostota, która może być zarówno zaletą, jak i wadą. Z jednej strony, system nie oferuje tak wielu zaawansowanych opcji jak niektórzy konkurenci, co może być ograniczeniem dla bardziej zaawansowanych użytkowników. Z drugiej strony, dzięki minimalizmowi, OpenMediaVault jest niezwykle mało zasobożerny, co pozwala na wykorzystanie dostępnych zasobów na inne oprogramowanie. To sprawia, że system jest idealnym rozwiązaniem dla tych, którzy potrzebują lekkiego i wydajnego narzędzia do zarządzania danymi w domowej lub małej sieci.
-![omv dashboard](/WłasnaDokumentacja/HomeLab/LepszaDokumentacja/images/omv-dashboard.png)
+![omv dashboard](images/omv-dashboard.png)
 
 Od razu po instalacji zmieniamy port z 80 na inny, który wiemy, że nie będzie nam potrzebny. Port 80 wykorzystamy później do proxy. W moim przypadku będzie to port 8000
 
@@ -72,11 +72,11 @@ Od razu po instalacji zmieniamy port z 80 na inny, który wiemy, że nie będzie
 
 #### 2.1.1. Przygotowanie dysków
 Aby przygotować dysk do pracy należy w zakładce **Dyski > Systemy plików** utowrzyć system, tutaj możemy zdecydować z jakiego systemu chcemy skorzystać i ewentualnie wybrać macierz RAID do zastosowania.
-![systemy plikow](/WłasnaDokumentacja/HomeLab/LepszaDokumentacja/images/systemy-plikow.png)
+![systemy plikow](images/systemy-plikow.png)
 
 #### 2.1.2. Portainer
 Na początku musimy utworzyć jakieś katalogi, na których będziemy chcieli trzymać nasze wszystkie pliki z portainera
-![katalogi dysk](/WłasnaDokumentacja/HomeLab/LepszaDokumentacja/images/katalogi-dysk.png)
+![katalogi dysk](images/katalogi-dysk.png)
 
 **docker** - tu bedziemy trzymać wszystko co związane z dockerem. Katalog jest na dysku, który później będzie w macierzy, wiec zwiekszy to jego dostępność.
 **docker-compose** - katalog, którego podanie wymaga portainer w konfiguracji
@@ -95,11 +95,11 @@ wget -O - https://github.com/OpenMediaVault-Plugin-Developers/packages/raw/maste
 ```
 Teraz pojawi nam się nowa zakładka **omv-extras** w zakładce system. Uruchamiamy dockera i uruchamiamy ponownie system.
 
-![katalogi dysk](/WłasnaDokumentacja/HomeLab/LepszaDokumentacja/images/wlaczenie-docker.png)
+![katalogi dysk](images/wlaczenie-docker.png)
 
 Teraz możemy zainstalować portainer. Zeby to zrobić przechodzimy do zakładki **Usługi>Compose>konfiguracja**
 
-![portainer konficuracja](/WłasnaDokumentacja/HomeLab/LepszaDokumentacja/images/uslugi-compose-konfiguracja.png)
+![portainer konficuracja](images/uslugi-compose-konfiguracja.png)
 
 
 Teraz w zakładce **Uslugi>Compose>Pliki** możemy utworzyć plik pod portainer. Do tego możemy wykorzystać przykładowy szablon z przycisku dodaj, albo wykrozystać plik compose:
@@ -110,7 +110,7 @@ Teraz w zakładce **Uslugi>Compose>Pliki** możemy utworzyć plik pod portainer.
 Wystaczy założyć konto i możemy sie logować.
 Teraz większość pracy z kontenerami będziemy mogli wykonywać za pomocą tego narzędzia.
 
-![portainer po instalacji](/WłasnaDokumentacja/HomeLab/LepszaDokumentacja/images/portainer-dashboard.png)
+![portainer po instalacji](images/portainer-dashboard.png)
 
 ### 2.2. File Browser
 Aplikacja ta pozwoli nam na sprawniejsze poruszanie się po katalogach i ich zarządzanie, ułatwi nam również na tworzenie prostych plików tekstowych.

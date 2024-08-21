@@ -185,6 +185,7 @@ W miejsce tokenu wklejamy skopiowany z duckdns token, następnie ustawiany sekun
 ![Strona ze wszystkimi certyfikatami](images/ssl-after-generating.png)
 
 Teraz na głównej stronie możemy dodać naszego hosta, aby to zrobić musimy wymyśleć poddomene do naszej glównej domeny. W tym przpadku będzie to **backup.dawo9889.duckdns.org**, następnie nakręślamy, na jaki adres i jaki port ma wskazywać nasza domena.
+
 ![backup ssl](images/ssl-backup.png)
 
 Następnie wybieramy nasz certyfikat:
@@ -194,7 +195,8 @@ Następnie wybieramy nasz certyfikat:
 Tak naprawdę to już wszystko. Teraz w przeglądarce możemy wpisać nasz adres i nasze proxy powinno przekierować nas na określoną usługę. W moim przypadku nakieruje mnie na usługę Duplicati - o której trochę więcej będzie później.
 
 Tak wygląda stan hostów w proxy na 20.08.2024:
-![](images/proxy-200824.png)
+
+![hosts](images/proxy-200824.png)
 
 ### 2.5. Tailscale
 
@@ -223,6 +225,7 @@ sudo tailscale up
 Następnie, chcemy określić nasz terminal jako router, do tego musimy wykonać te [polecenia](https://tailscale.com/kb/1406/quick-guide-subnets)
 
 Dodatkowo wskazujemy tailscale, że nasz terminal może być węzłem wyjściowym. Dzięki temu będziemy mogli wychodzić do internetu właśnie przez niego:
+
 [Wskazanie terminala jako węzła wyjściowego](https://tailscale.com/kb/1103/exit-nodes?tab=linux)
 
 Na koniec musimy w panelu administratora tailscale na przeglądarce zatwierdzić ustawienia. Nie powinno to byc trudne, bo wyskakują od tego powiadomienia.
@@ -257,6 +260,7 @@ Tak samo jak w kontenerach powyżej, musimy okreslić gdzie chcemy nasze dane pr
 
 > [docker-compose.yaml dla nextcloud](containers/Nextcloud/docker-compose.yaml)
 Do działania musimy zdefiniować zmienne środowiskowe dla naszej aplikacji. Są to ważne dane poufne, więc nie zapomnijmy ich gdzies zapisać, na przykład w menadżerze haseł.
+
 >[Example.env dla nextcloud](containers/Nextcloud/example.env)
 
 Po uruchomieniu kontenerów, możemy utworzyć użytkownika i już się bawić naszą chmurą. Jednak jakbyśmy chcieli korzystać z połączenia po https, musimy zrobić parę dodatkowych rzeczy:

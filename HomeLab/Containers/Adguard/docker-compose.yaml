@@ -1,0 +1,21 @@
+####
+# Wymaga najpierw wyłączenia demona "systemd-resolved", aby zwolnić port 53/udp:
+# $ sudo systemctl stop systemd-resolved
+# $ sudo systemctl disable systemd-resolved.service
+# $ sudo reboot
+####
+
+version: "3"
+services:
+   adguardhome:
+     image: adguard/adguardhome:latest
+     container_name: adguardhome
+     restart: always
+     ports:
+       - 53:53/tcp #zwyklyDNS Ten port musi zawsze być ten sam!
+       - 53:53/udp #zwyklyDNS Ten port musi zawsze być ten sam!
+       - 853:853/tcp  #DNSoverTLS
+       - 3000:3000/tcp #adminpanel
+     volumes:
+       - /srv/dev-disk-by-uuid-f3ecf3ed-75bd-4bee-ba7b-48c3a2e85026/docker/docker_dane/adguardhome/work:/opt/adguardhome/work #Podkładamy nasze fizyczne scieżki na dysku, aby zachować dane
+       - /srv/dev-disk-by-uuid-f3ecf3ed-75bd-4bee-ba7b-48c3a2e85026/docker/docker_dane/adguardhome/conf:/opt/adguardhome/conf

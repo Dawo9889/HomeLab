@@ -291,6 +291,9 @@ Do samej instalacji mocno polecam [dokumentacje producenta](https://immich.app/d
 > [plik ze zmiennymi środowiskowymi](containers/Immich/example.env)
 Oczywiście pamiętajmy, że zmienne środowiskowe powinny być poufne, a haslo do bazy danych zapisać gdzieś w menadżerze haseł.
 
+Teraz możemy się cieszyć z własnej chmury do przetrzymywania zdjęć :)
+![immich](images/immich.png)
+
 #### 2.7.1. Backup danych
 ##### 2.7.1.1. Tworzenie backupu
 Z doświadczenia wiem, że zamiast po prostu kopiować pliki, lepiej jest wykonać backup z [dokumentacji programu](https://immich.app/docs/administration/backup-and-restore)

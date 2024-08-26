@@ -145,7 +145,7 @@ Dodajemy nasz adres adguarda w konfiguracji dhcp na routerze. Teraz kazde urząd
 ![Konfiguracja dhcp na routerze](images/router-conf.png)
 
 ### 2.4. Nginx Proxy Manager
-Dzięki temu proxy, będziemy mogli przekierować ruch na określone urządzenia. W nim zdefiniujemy przepisanie nazw domenowch na określony adres i port. Dzięki temu będziemy mogli, po wpisaniu w przeglądarce na przykład: `dawid.example.com` dostać się na serwer o ip: 162.168.1.150:8000.
+Dzięki temu proxy, będziemy mogli przekierować ruch na określone urządzenia. W nim zdefiniujemy przepisanie nazw domenowch na określony adres i port. Dzięki temu będziemy mogli, po wpisaniu w przeglądarce na przykład: `dawid.example.com` dostać się na serwer o ip: 192.168.1.150:8000.
 
 W tworzeniu kontenera kluczowe jest zostawienie domyślnych portów, bo teraz jakikolwiek ruch na porcie 80 lub 443 zostanie obsłużony przez nasze proxy.
 > [docker-compose dla nginx proxy manager](Containers/NPM/docker-compose.yaml)

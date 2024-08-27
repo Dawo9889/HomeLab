@@ -228,6 +228,10 @@ Dodatkowo wskazujemy tailscale, że nasz terminal może być węzłem wyjściowy
 
 [Wskazanie terminala jako węzła wyjściowego](https://tailscale.com/kb/1103/exit-nodes?tab=linux)
 
+*Komenda, która w jednej linii zrobi to samo co powyższe*
+```
+tailscale up --advertise-exit-node --advertise-routes=192.168.1.0/24
+```
 Na koniec musimy w panelu administratora tailscale na przeglądarce zatwierdzić ustawienia. Nie powinno to byc trudne, bo wyskakują od tego powiadomienia.
 
 ![route settings](images/route-settings.png)
